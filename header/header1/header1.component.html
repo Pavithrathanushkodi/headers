@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="web-header">
+      <div class="left">
+          <img [src]="logo.image" />
+      </div>
+      <div class="center">
+          <div class="list" *ngFor="let items of list; let i = index">
+              <a *ngIf="items.type == 'link'">{{ items.text }}</a>
+              <a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" *ngIf="items.type == 'dropdown'">{{ items.text }}</a>
+              <ul class="dropdown-menu">
+                  <li *ngFor="let menu of items.dropdownmenu">{{ menu }}</li>
+              </ul>
+          </div>
+      </div>
+
+      <div class="right">
+          <button type="button" class="button">{{ buttontext }}</button>
+      </div>
+  </div>
+</div>
+<!-- // phone-header -->
+
+<div class="phone-header">
+  <div class="left1">
+      <img [src]="logo.image" />
+  </div>
+  <div class="right1">
+      <i class="bi bi-list menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasmenu"></i>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasmenu" aria-labelledby="offcanvasLabel">
+          <div class="offcanvas-header">
+              <img [src]="logo.image" />
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+              <div class="list" *ngFor="let items of list; let i = index">
+                  <a *ngIf="items.type == 'link'">{{ items.text }}</a>
+                  <a class="collapse-toggle btn btn-link" type="button" data-bs-toggle="collapse" aria-expanded="false" [attr.data-bs-target]="'#collapse'+i" *ngIf="items.type == 'dropdown'">{{ items.text }}</a>
+                  <div [id]="'collapse'+i" class="collapse">
+                      <ul class="collapse-menu">
+                          <li class="list-group-item" *ngFor="let menu of items.dropdownmenu">{{ menu }}</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,180 @@
+
+
+.web-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--header2-background-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  background-color: var(--header2-background-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.con-left {
+  background-color: blue;
+  padding: 20px;
+}
+img {
+  width: 80px;
+  height: 35px;
+  background-color: var(--header2-background-color);
+}
+
+
+.con-right {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  color: white;
+  float: right;
+}
+
+a {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.list a:hover {
+  background-color: white;
+  color: blue;
+}
+.list{
+  display:flex;
+  align-items: center;
+}
+.list:hover{
+  color:blue;
+}
+
+.dropdown-toggle {
+  text-decoration: none;
+  color: var(--header1-color);
+  font-size:20px;
+}
+.dropdown-item{
+  font-size:20px;
+}
+
+.text-color{
+  color:blue;
+}
+.bg-color{
+  background-color: white;
+}
+
+.dropdown-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+}
+
+
+a.dropdown-item{
+  padding:0px;
+}
+
+@media only screen and (max-width:991px){
+  .web-header{
+    display:none;
+  }
+  .offcanvas{
+    width:80%;
+  }
+  
+  .offcanvas-header img{
+    width:100%;
+  }
+  .btn-close{
+    float:left;
+  }
+  .text-color{
+    color:blue;
+  }
+
+  .menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-style: solid 1px black;
+    padding:10px;
+  }
+  
+  .menu-item {
+    padding: 10px 0;
+    
+  }
+  
+  .menu-link {
+    display: block;
+    
+    color: white; /* Change color as needed */
+    text-decoration: none;
+    font-size:15px;
+    
+  }
+  .menu-link:hover{
+    color:blue;
+    padding-left:10px;
+  }
+  
+  .collapse-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sub-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .collapse-toggle {
+    cursor: pointer;
+    color: white; 
+    text-decoration: none;
+    font-size:15px;
+  }
+  .collapse-toggle:hover{
+    color:blue;
+  }
+  
+  .collapse-item {
+    color: white; 
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .collapse-item:hover{
+    color:blue;
+  }
+  .submenu {
+    cursor: pointer;
+    color: white; /* Change color as needed */
+    font-size: 15px;
+  }
+  .sub-menu.collapse.show{
+    font-size:15px;
+  }
+  a.collapse-item{
+    padding:0px;
+  }
+  a.collapse-toggle.btn-link{
+    display:flex;
+    gap:20px;
+  }
+  
+
+}
+@media only screen and (min-width:992px){
+  .mobile-header{
+    display:none;
+  }
+}
+
+

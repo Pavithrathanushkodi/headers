@@ -1,0 +1,123 @@
+
+.container-fluid{
+    position:fixed;
+    top:0px;
+    box-shadow:rgba(17, 17, 26, 0.1) 0px 1px 0px;
+}
+
+.web-header{
+    padding:20px;
+    background-color: var(--header1-backgroundcolor);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width:100%;
+    height:auto;
+    
+}
+
+img{
+    height:auto;
+    width:93px;
+}
+
+.center{
+    display:flex;
+    align-items: center;
+    gap:40px;
+    font-size: 18px;
+}
+.button{
+    padding:8px 24px;
+    background-color: var(--header1-button-backgroundcolor-beforehover);
+    color: var(--header1-button-fontcolor);
+    border-radius: 40px;
+    float: right;
+    height:48px;
+    width:163px;
+    border:none;
+}
+button:hover{
+    background-color:var(--header1-button-backgroundcolor-afterhover);
+    color: var(--header1-button-fontcolor);
+}
+.list a:hover{
+    color:var(--header1-link-color);
+    cursor: pointer;
+}
+
+.right-1 i{
+    font-size: 0px;
+}
+.dropdown-toggle{
+    text-decoration: none;
+    color:var(--header1-color);
+}
+.dropdown-menu li{
+    box-shadow: 0 0 15px 0 rgba(0,0,0,.05);
+    border-bottom: 5px solid aliceblue;
+    background-color:white;
+    padding-left: 5px;
+    
+}
+
+/* // phone header code */
+  
+@media only screen and (max-width:991px){
+    .web-header{
+        display:none;
+    }
+    img{
+        width:80px;
+        height:40px
+    }
+    .offcanvas-header{
+        display:flex;
+        justify-content: space-between;
+   }
+
+   .offcanvas-body{
+    display:flex;
+    flex-direction: column;
+    align-items: left;
+    gap:20px;
+   }
+   .offcanvas{
+    width:70%;
+   }
+   .collapse-toggle {
+    color:var(--header1-fontcolor);
+    text-decoration: none;
+    padding: 0px;
+   }
+   .collapse-toggle:hover{
+    color:var(--header1-link-color);
+    cursor: pointer;
+   }
+   .phone-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+   }
+   li{
+    padding:10px;
+    border-bottom:solid 1px black;
+  }
+  .menu{
+    font-size:25px;
+    cursor: pointer;
+  }
+   
+   }
+
+
+@media only screen and (min-width:991px){
+    .phone-header{
+        display:none;
+    }
+    
+}
+
+

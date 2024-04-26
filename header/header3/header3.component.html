@@ -1,0 +1,66 @@
+<div class="web-header">
+  <div class="con-left">
+    <img [src]="logo.image" alt="Logo" />
+  </div>
+  <div class="con-right">
+    <div class="list" *ngFor="let item of list; let i = index">
+      <a *ngIf="item.type == 'link'">{{ item.text }}</a>
+      <div class="dropdown" *ngIf="item.type == 'dropdown'">
+        <a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" [ngClass]="{'text-color': item.text === 'Home', 'bg-color': item.text === 'Home'}">
+          {{ item.text }}
+        </a>
+        <ul class="dropdown-menu two-row" *ngIf="item.text === 'Home'">
+          <li *ngFor="let menu of item.Menu1">{{ menu.name }}</li>
+          <li *ngFor="let menu of item.Menu2">{{ menu.name }}</li>
+        </ul>
+        <ul class="dropdown-menu" *ngIf="item.text !== 'Home'">
+          <li class="dropend" *ngFor="let menu of item.Menu">
+            <div class="dropdown-toggle sub-menu" data-bs-toggle="dropdown" aria-expanded="false" *ngIf="menu.submenu">{{ menu.name}} </div>
+            <ul class="dropdown-menu">
+              <li *ngFor="let sub of menu.submenu">{{ sub.name }}</li>
+            </ul>
+            <a class="dropdown-item" *ngIf="!menu.submenu">{{ menu.name }}</a>
+          </li>
+        </ul> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mobile-header">
+  <div class="left">
+    <img [src]="logo.image" alt="Logo" />
+  </div>
+  <div class="right">
+    <i class="bi bi-list menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightDark" aria-controls="offcanvasRight"></i>
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasRightDark" aria-labelledby="offcanvasRightDarkLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="menu-list">
+          <li class="menu-item" *ngFor="let item of list; let i = index">
+            <a *ngIf="item.type == 'link'" class="menu-link">{{ item.text }}</a>
+            <div class="dropdown" *ngIf="item.type == 'dropdown'">
+              <a class="collapse-toggle btn-link" type="button" data-bs-toggle="collapse" aria-expanded="false" [attr.data-bs-target]="'#collapse'+i" [ngClass]="{'text-color': item.text === 'Home'}">
+                {{ item.text }}<i class="bi bi-chevron-compact-right"></i>
+              </a>
+            
+              <div [id]="'collapse'+i" class="collapse">
+                <ul class="collapse-menu">
+                  <li *ngFor="let menu of item.Menu ; let j = index">
+                    <div class="collapse-toggle subcollapsemenu btn-link" type="button" data-bs-toggle="collapse" aria-expanded="false" [attr.data-bs-target]="'#subCollapse'+j" *ngIf="menu.submenu"> {{ menu.name }}<i class="bi bi-chevron-compact-right"></i> </div>
+                    <ul class="collapse sub-menu" [id]="'subCollapse'+j">
+                      <li *ngFor="let sub of menu.submenu">{{ sub.name }}</li>
+                    </ul>
+                    <a class="collapse-item" *ngIf="!menu.submenu">{{ menu.name }}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

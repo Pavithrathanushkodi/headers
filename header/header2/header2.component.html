@@ -1,0 +1,119 @@
+<!-- //here top header code for web  -->
+
+<div class="web-top-Header">
+  <div class="left">
+    <img [src]="image">
+  </div>
+  <div class="center">
+    <div class="input-group box">
+      <input type="text" class="form-control" placeholder="Search For Products" aria-label="Search For Products"
+        aria-describedby="button-addon2">
+      <button class="btn btn-success" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
+    </div>
+  </div>
+  <div class="right">
+    <a href=" "><i class="bi bi-geo-alt icon1"></i> Order Tracking </a>
+  </div>
+</div>
+
+<!-- // bottom Header for web code here -->
+
+
+<div class="web-bottom-Header">
+  <div class="section1">
+    <i class="bi bi-list menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasmenu"></i>
+    <p>Categories</p>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasmenu" aria-labelledby="offcanvasLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+    </div>
+  
+    <div class="list" *ngFor="let items of list; let i = index">
+      <a class="link" *ngIf="items.type == 'link'">{{ items.text }}</a>
+
+      <a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        *ngIf="items.type == 'dropdown'">{{ items.text }}
+      </a>
+
+      <ul class="dropdown-menu">
+        <li *ngFor="let menu of items.dropdownMenu">{{ menu }}</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="section3">
+    <div class="icon1">
+      <a href=" "><i class="bi bi-suit-heart"></i></a>
+      <a href=" "><button type="button" class="btn-success not-button">0</button></a>
+    </div>
+
+    <div class="icon1">
+      <a href=" "><i class="bi bi-bag-dash"></i></a>
+      <a href=" "><button type="button" class="btn-success not-button">0</button></a>
+    </div>
+
+    <div class="icon1">
+      <a href=" "><i class="bi bi-app-indicator"></i></a>
+    </div>
+
+    <div class="Login icon1">
+      <a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person"></i>Login Register</a>
+      <ul class="dropdown-menu">
+        <li>Sign Up</li>
+        <li>Sign In</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- //phone-header -->
+
+
+    <div class="phone-header">
+      <a href=""><img [src]="image"></a>
+      <div class="icons">
+        <i class="bi bi-list menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasphonemenu"></i>
+        
+    
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasphonemenu" aria-labelledby="offcanvasLabel">
+          <div class="offcanvas-ph-header">
+              
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-header1">
+              <div class="input-group box">
+                <input type="text" class="form-control" placeholder="Search For Products" aria-label="Search For Products"
+                  aria-describedby="button-addon2" >
+                <button class="btn btn-success" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
+              </div>
+            </div>
+            <div class ="offcanvas-body">
+              <div class="list" *ngFor="let items of list; let i = index">
+                <a *ngIf="items.type == 'link'">{{ items.text }}</a>
+          
+                <a class="collapse-toggle btn-link" type="button" data-bs-toggle="collapse" aria-expanded="false" [attr.data-bs-target]="'#collapse'+i"
+                 *ngIf="items.type == 'dropdown'">{{ items.text }}
+                </a>
+                <div [id]="'collapse'+i" class="collapse"  data-bs-dismiss="offcanvas">
+                  <ul class="collapse-menu">
+                        <li class="list-group-item"  *ngFor="let menu of items.dropdownMenu">{{ menu }}</li>
+                  </ul>
+                  </div>
+              </div>
+              <div class="offcanvas-footer">
+                <a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person"></i>Login Register</a>
+                <ul class="dropdown-menu">
+                  <li>SignUp</li>
+                  <li>SignIn</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+
+<!-- </div> -->
